@@ -1,0 +1,38 @@
+ Dynamic data masking (DDM) is a powerful data-security technique for protecting personal
+ and other sensitive information in databases from unauthorized access. A DDM can be used to mask or
+ obfuscateinformationinrealtime,asitisaccessedbyunauthorizedusers.Thispreventssensitiveinformation
+ from being exposed, while still allowing authorized users to access the data. In current multilayered applica
+tions, data masking may be incorporated as special modules placed anywhere between the storage and user
+ interface. In this paper, we consider the solution of implementing masking directly in the persistence layer so
+ that data do nottravel unmaskedalongthenetwork.Thedataatrestareunchanged(i.e.,unmasked),butwhen
+ users query the database, the sensitive columns in the results are displayed in a masked format, which makes
+ it impossible to identify the original data. Given the diversity of masking features proposed by commercial
+ and open-source database servers, this study proposes a framework for assessing the performance penalty of
+ SQL queries when using database masking relative to the original (unmasking) scenario. We implemented
+ and applied the framework to a basic masking scenario in the Oracle database server using the TPC-H
+ benchmark database. Exploratory analysis and Machine Learning models suggest that DDM has a weak
+ impact on query performance. This could be a powerful incentive for incorporating DDM in real-world
+ software applications when up to 100GB data is stored using Oracle database server
+
+Theremainderofthispaperisorganizedasfollows.SectionII
+ reviews the literature on legal requirements regarding data
+ protection, definitions from international standards (ISO/IEC
+ standards), data masking and anonymization definitions, and
+ the main approaches, as presented in the main computing
+ journals and conference papers.
+ The solutions for data masking, as implemented in some
+ major SQL and NoSQL database servers- Oracle, Post
+greSQL, Microsoft SQL Server, MongoDB, and Apache
+ Hive- are briefly described in Section III. More details are
+ provided regarding the Oracle data-masking features and the
+ solution tested in this study (i.e., DBMS_REDACT).
+ The pillars of the proposed framework (i.e., the SQL query
+ generator for various scale factors of the TPC-H benchmark
+ database) are presented in Section IV, including the experi
+mental design and methods andtools for further data process
+ing and analysis.
+ Section V describes the results of applying the framework
+ on four scale factors (1, 10, 50, and 100GB) of the TPC-H
+ benchmark database in a basic Oracle data-masking scenario
+ and data exploration and analysis using inferential statistics
+ and Machine Learning
